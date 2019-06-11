@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: pink;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@../../sudokustyl.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="button" layoutX="141.0" layoutY="140.0" mnemonicParsing="false" onAction="#StartGame" opacity="0.79" prefHeight="121.0" prefWidth="337.0" text="START SUDOKU" textAlignment="CENTER" underline="true">
+         <textFill>
+            <LinearGradient endX="0.8285714285714286" endY="1.0" startY="0.17142857142857149">
+               <stops>
+                  <Stop color="#ff5826" />
+                  <Stop color="#110000" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Button>
+      <MenuBar layoutX="-8.0" layoutY="-3.0" prefHeight="25.0" prefWidth="600.0">
+        <menus>
+          <Menu fx:id="file" mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="close" mnemonicParsing="false" onAction="#closeAction" text="Close" />
+            </items>
+          </Menu>
+          <Menu fx:id="instruction" mnemonicParsing="false" text="Instruction">
+               <items>
+                  <MenuItem fx:id="PLItem" mnemonicParsing="false" onAction="#PLinstr" text="PL" />
+                  <MenuItem fx:id="ANGItem" mnemonicParsing="false" onAction="#ANGinstr" text="GB" />
+                  <MenuItem fx:id="GEItem" mnemonicParsing="false" onAction="#GEinstr" text="GE" />
+                  <MenuItem fx:id="NLItem" mnemonicParsing="false" onAction="#NLinstr" text="NL" />
+               </items></Menu>
+            <Menu fx:id="changelang" mnemonicParsing="false" text="Change language">
+              <items>
+                <MenuItem fx:id="changepolish" mnemonicParsing="false" onAction="#PolishAction" text="change to polish" />
+                  <MenuItem fx:id="changeenglish" mnemonicParsing="false" onAction="#EnglishAction" text="change to english" />
+                  <MenuItem fx:id="changegerman" mnemonicParsing="false" onAction="#GermanAction" text="change to german" />
+                  <MenuItem fx:id="changedutch" mnemonicParsing="false" onAction="#DutchAction" text="change to dutch" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

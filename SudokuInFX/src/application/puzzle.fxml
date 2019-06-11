@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="243.0" prefWidth="338.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <Button fx:id="check" layoutX="28.0" layoutY="59.0" mnemonicParsing="false" prefHeight="126.0" prefWidth="292.0" text="Check/Sprawdz/Kontrollieren/Controleren" textFill="#3900ff">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
