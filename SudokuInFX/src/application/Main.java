@@ -12,7 +12,7 @@ import javafx.scene.layout.AnchorPane;
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws IOException {
-		//try {
+		try {
 			AnchorPane root = FXMLLoader.load(getClass().getResource("Sudoku.fxml"));
 			
 			primaryStage.setResizable(true);
@@ -20,9 +20,9 @@ public class Main extends Application {
 			primaryStage.setScene(new Scene(root,600,400));
 			primaryStage.show();
 			
-		/*} catch(Exception e) {
+		} catch(Exception e) {
 			e.printStackTrace();
-		}*/
+		}
 	}
 	
 	public static void main(String[] args) {

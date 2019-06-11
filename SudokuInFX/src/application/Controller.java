@@ -3,10 +3,18 @@ package application;
 
 import javafx.event.*;
 import javafx.fxml.*;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Stage;
+
 import java.io.File;
+import java.io.IOException;
 
 public class Controller {
 	@FXML
@@ -24,9 +32,19 @@ public class Controller {
 	@FXML
 	Menu instruction = new Menu();
 	@FXML
+	MenuItem ANGItem = new MenuItem();
+	@FXML
+	MenuItem PLItem = new MenuItem();
+	@FXML
+	MenuItem NLItem = new MenuItem();
+	@FXML
+	MenuItem GEItem = new MenuItem();
+	@FXML
 	Menu changelang = new Menu();
 	@FXML
 	MenuItem close = new MenuItem();
+	@FXML
+	Button check = new Button();
 	
 	
 	Generation SudGen = new Generation();
@@ -36,6 +54,11 @@ public class Controller {
 		
 		
 	}
+	
+	//-------------------------------#
+	//MULTI-LANGUAGE ActionListeners.#
+	//-------------------------------#
+	
 	@FXML
 	private void PolishAction(ActionEvent evt){
 		button.setText("START SUDOKU");
@@ -100,14 +123,104 @@ public class Controller {
         MediaPlayer mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.play();
 	}
+	
+	//------------#
+	//INSTRUCTIONS#
+	//------------#
 	@FXML
-	private void StartGame(ActionEvent evt) {
+	public void PLinstr(){
+		BorderPane pane = new BorderPane();
+		Stage instrStage = new Stage();
+		Scene instrScene = new Scene(pane);
+		File picFile = new File("instrukcja.png");
+		Image ins = new Image(picFile.toURI().toString());
+		ImageView insView = new ImageView(ins);
+		
+		pane.getChildren().add(insView);
+		instrStage.setScene(instrScene);
+		instrStage.show();
+	}
+	
+	@FXML
+	public void ANGinstr(){
+		BorderPane pane = new BorderPane();
+		Stage instrStage = new Stage();
+		Scene instrScene = new Scene(pane);
+		File picFile = new File("instruction.png");
+		Image ins = new Image(picFile.toURI().toString());
+		ImageView insView = new ImageView(ins);
+		
+		pane.getChildren().add(insView);
+		instrStage.setScene(instrScene);
+		instrStage.show();
+	}
+	
+	@FXML
+	public void NLinstr(){
+		BorderPane pane = new BorderPane();
+		Stage instrStage = new Stage();
+		Scene instrScene = new Scene(pane);
+		File picFile = new File("instructie.png");
+		Image ins = new Image(picFile.toURI().toString());
+		ImageView insView = new ImageView(ins);
+		
+		pane.getChildren().add(insView);
+		instrStage.setScene(instrScene);
+		instrStage.show();
+	}
+	
+	@FXML
+	public void GEinstr(){
+		BorderPane pane = new BorderPane();
+		Stage instrStage = new Stage();
+		Scene instrScene = new Scene(pane);
+		File picFile = new File("Instruktion.png");
+		Image ins = new Image(picFile.toURI().toString());
+		ImageView insView = new ImageView(ins);
+		
+		pane.getChildren().add(insView);
+		pane.getChildren().add(new ImageView(ins));
+	    
+		instrStage.setScene(instrScene);
+		instrStage.show();
+	}
+	
+	//--------------------#
+	//OPENING SUDOKU PANEL#
+	//--------------------#
+	
+	@FXML
+	private void StartGame(ActionEvent evt) throws IOException {
 		SudGen.CreateBackground();
+		SudGen.CreateZeroes();
+		
+		AnchorPane root = FXMLLoader.load(getClass().getResource("puzzle.fxml"));
+		Stage buttonStage = new Stage();
+		Scene buttonScene = new Scene(root,400,200);
+		//Button check = new Button("Check/Sprawdz/Kontrollieren/Controleren");
+		buttonStage.setScene(buttonScene);
+		buttonStage.show();
+		
+		
+		
 		String musicFile = "XPstart.mp3";
 		Media sound = new Media(new File(musicFile).toURI().toString());
 		MediaPlayer mediaPlayer = new MediaPlayer(sound);
 		mediaPlayer.play();
 	}
+	
+	//-------------------#
+	//OPENING INSTRUCTION#
+	//-------------------#
 
 
 }
+
+
+
+
+
+
+
+
+
